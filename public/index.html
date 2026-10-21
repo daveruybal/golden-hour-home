@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Golden Hour Tools</title>
+  <style>
+    :root {
+      --bg: #fbf6ee;
+      --card: #ffffff;
+      --ink: #2b2118;
+      --muted: #7a6a5a;
+      --accent: #e08a1e;
+      --accent-soft: #fcebd3;
+      --border: #eadfce;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1b1612;
+        --card: #26201a;
+        --ink: #f4ebdf;
+        --muted: #b3a291;
+        --accent: #f2a541;
+        --accent-soft: #3a2c1c;
+        --border: #3a3027;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.45;
+    }
+    main { max-width: 760px; margin: 0 auto; padding: 48px 16px 64px; }
+    header { margin-bottom: 32px; }
+    .sun {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: radial-gradient(circle at 50% 60%, #ffd27a, var(--accent));
+      box-shadow: 0 0 0 6px var(--accent-soft);
+      margin-bottom: 16px;
+    }
+    h1 { font-size: 1.9rem; margin: 0 0 4px; letter-spacing: -0.01em; }
+    header p { margin: 0; color: var(--muted); }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 14px;
+    }
+    .tool {
+      display: block;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      color: inherit;
+      text-decoration: none;
+      transition: border-color .15s, transform .15s;
+    }
+    a.tool:hover, a.tool:focus-visible { border-color: var(--accent); transform: translateY(-2px); outline: none; }
+    .tool .icon { font-size: 1.6rem; }
+    .tool h2 { font-size: 1.1rem; margin: 8px 0 4px; }
+    .tool p { margin: 0; color: var(--muted); font-size: .92rem; }
+    .tool.soon { opacity: .55; border-style: dashed; }
+    .tag {
+      display: inline-block; margin-top: 10px; font-size: .75rem;
+      padding: 2px 8px; border-radius: 999px;
+      background: var(--accent-soft); color: var(--accent);
+    }
+    footer { margin-top: 40px; color: var(--muted); font-size: .8rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="sun" aria-hidden="true"></div>
+      <h1>Golden Hour Tools</h1>
+      <p>Behind-the-counter tools for Golden Hour Pizza.</p>
+    </header>
+
+    <div class="grid">
+      <!-- To add a tool: copy one <a class="tool"> block and change the link, icon, name, and description. -->
+      <a class="tool" href="https://prep.goldenhourtools.com">
+        <div class="icon">🍕</div>
+        <h2>Prep Planner</h2>
+        <p>Dough, sauce, and topping prep for the next service.</p>
+        <span class="tag">prep.goldenhourtools.com</span>
+      </a>
+
+      <a class="tool" href="https://sliceview.goldenhourtools.com">
+        <div class="icon">🧾</div>
+        <h2>SliceView</h2>
+        <p>Live kitchen order board, label printing, and the print switch.</p>
+        <span class="tag">sliceview.goldenhourtools.com</span>
+      </a>
+
+      <!-- Placeholder: delete or turn into a link when the next tool is ready. -->
+      <div class="tool soon">
+        <div class="icon">🧰</div>
+        <h2>Next tool</h2>
+        <p>Coming soon.</p>
+      </div>
+    </div>
+
+    <footer>Golden Hour Pizza · Albuquerque, NM</footer>
+  </main>
+</body>
+</html>
