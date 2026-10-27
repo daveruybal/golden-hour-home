@@ -4,78 +4,44 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <title>Golden Hour Tools</title>
   <style>
+    /* Same look as Golden Hour Prep and SliceView: black, green (#228B22) and Golden Hour gold (#e7b922). */
     :root {
-      --bg: #fbf6ee;
-      --card: #ffffff;
-      --ink: #2b2118;
-      --muted: #7a6a5a;
-      --accent: #e08a1e;
-      --accent-soft: #fcebd3;
-      --border: #eadfce;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #1b1612;
-        --card: #26201a;
-        --ink: #f4ebdf;
-        --muted: #b3a291;
-        --accent: #f2a541;
-        --accent-soft: #3a2c1c;
-        --border: #3a3027;
-      }
+      --bg: #000; --card: #1a1a1a; --raise: #2a2a2a; --ink: #fff; --muted: #aaa;
+      --green: #228B22; --green-hi: #90EE90; --gold: #e7b922;
+      color-scheme: dark;
     }
     * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      line-height: 1.45;
-    }
-    main { max-width: 760px; margin: 0 auto; padding: 48px 16px 64px; }
-    header { margin-bottom: 32px; }
-    .sun {
-      width: 44px; height: 44px; border-radius: 50%;
-      background: radial-gradient(circle at 50% 60%, #ffd27a, var(--accent));
-      box-shadow: 0 0 0 6px var(--accent-soft);
-      margin-bottom: 16px;
-    }
-    h1 { font-size: 1.9rem; margin: 0 0 4px; letter-spacing: -0.01em; }
-    header p { margin: 0; color: var(--muted); }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 14px;
-    }
+    body { margin: 0; background: var(--bg); color: var(--ink); font-family: Arial, 'Helvetica Neue', sans-serif; line-height: 1.45; }
+    main { max-width: 820px; margin: 0 auto; padding: 36px 16px 56px; }
+    header { text-align: center; padding-bottom: 22px; margin-bottom: 26px; border-bottom: 3px solid var(--green); }
+    .logo { display: block; width: min(300px, 70vw); height: auto; margin: 0 auto 18px; }
+    h1 { margin: 0; font-size: 30px; font-weight: bold; color: var(--gold); text-shadow: 2px 2px 4px rgba(0,0,0,.5); }
+    header p { margin: 6px 0 0; color: var(--muted); font-size: 16px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 16px; }
     .tool {
-      display: block;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 18px;
-      color: inherit;
-      text-decoration: none;
-      transition: border-color .15s, transform .15s;
+      display: flex; flex-direction: column; gap: 6px;
+      background: var(--card); border: 2px solid var(--green); border-radius: 12px;
+      padding: 18px; color: inherit; text-decoration: none; transition: background .15s, border-color .15s;
     }
-    a.tool:hover, a.tool:focus-visible { border-color: var(--accent); transform: translateY(-2px); outline: none; }
-    .tool .icon { font-size: 1.6rem; }
-    .tool h2 { font-size: 1.1rem; margin: 8px 0 4px; }
-    .tool p { margin: 0; color: var(--muted); font-size: .92rem; }
-    .tool.soon { opacity: .55; border-style: dashed; }
-    .tag {
-      display: inline-block; margin-top: 10px; font-size: .75rem;
-      padding: 2px 8px; border-radius: 999px;
-      background: var(--accent-soft); color: var(--accent);
-    }
-    footer { margin-top: 40px; color: var(--muted); font-size: .8rem; }
+    a.tool:hover, a.tool:focus-visible { background: #1f2a1f; border-color: var(--green-hi); outline: none; }
+    a.tool:active { transform: scale(.98); }
+    .tool .icon { font-size: 28px; line-height: 1; }
+    .tool h2 { margin: 4px 0 0; font-size: 21px; color: var(--gold); }
+    .tool p { margin: 0; color: #ccc; font-size: 15px; flex: 1; }
+    .tag { align-self: flex-start; margin-top: 8px; font-size: 12px; font-weight: bold; padding: 4px 10px; border-radius: 999px; background: #000; color: var(--green-hi); border: 1px solid #2d4a2d; }
+    .tool.soon { border: 2px dashed #444; opacity: .6; }
+    .tool.soon h2 { color: var(--muted); }
+    footer { margin-top: 36px; text-align: center; color: #777; font-size: 13px; }
   </style>
 </head>
 <body>
   <main>
     <header>
-      <div class="sun" aria-hidden="true"></div>
+      <img class="logo" src="/logo-main.svg" alt="Golden Hour Pizza">
       <h1>Golden Hour Tools</h1>
       <p>Behind-the-counter tools for Golden Hour Pizza.</p>
     </header>
@@ -85,14 +51,14 @@
       <a class="tool" href="https://prep.goldenhourtools.com">
         <div class="icon">🍕</div>
         <h2>Prep Planner</h2>
-        <p>Dough, sauce, and topping prep for the next service.</p>
+        <p>Service days and lineup, prep, dough and shopping, plus menu prices for the register.</p>
         <span class="tag">prep.goldenhourtools.com</span>
       </a>
 
       <a class="tool" href="https://sliceview.goldenhourtools.com">
         <div class="icon">🧾</div>
         <h2>SliceView</h2>
-        <p>Live kitchen order board, label printing, and the print switch.</p>
+        <p>Kitchen order board and labels, the POS register, and sales for QuickBooks.</p>
         <span class="tag">sliceview.goldenhourtools.com</span>
       </a>
 
