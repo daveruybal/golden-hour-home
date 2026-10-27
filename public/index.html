@@ -21,7 +21,7 @@
     .logo { display: block; width: min(300px, 70vw); height: auto; margin: 0 auto 18px; }
     h1 { margin: 0; font-size: 30px; font-weight: bold; color: var(--gold); text-shadow: 2px 2px 4px rgba(0,0,0,.5); }
     header p { margin: 6px 0 0; color: var(--muted); font-size: 16px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 16px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 340px)); justify-content: center; gap: 16px; }
     .tool {
       display: flex; flex-direction: column; gap: 6px;
       background: var(--card); border: 2px solid var(--green); border-radius: 12px;
@@ -47,17 +47,10 @@
 
     <div class="grid">
       <!-- To add a tool: copy one <a class="tool"> block and change the link, icon, name, and description. -->
-      <a class="tool" href="https://prep.goldenhourtools.com">
-        <div class="icon">🧾</div>
-        <h2>Prep Planner</h2>
-        <p>Service days and lineup, prep, dough and shopping, plus menu prices for the register.</p>
-        <span class="tag">prep.goldenhourtools.com</span>
-      </a>
-
       <a class="tool" href="https://sliceview.goldenhourtools.com">
         <div class="icon">🍕</div>
         <h2>SliceView</h2>
-        <p>Kitchen order board and labels, the POS register, and sales for QuickBooks.</p>
+        <p>Kitchen order board and labels, the POS register, sales for QuickBooks, and prep planning.</p>
         <span class="tag">sliceview.goldenhourtools.com</span>
       </a>
     </div>
